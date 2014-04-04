@@ -10,6 +10,7 @@ var logger = require('./logger'),
 var app = connect();
 
 app.use(logger('redirector'));
+app.use(logger('redirector'));
 
 app.use(function(req, res) {
 	mappings.get(req.url, function(err, mapping) {
