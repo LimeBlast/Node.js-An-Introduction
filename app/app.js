@@ -2,11 +2,7 @@
 
 var http = require('http');
 
-var mappings = {
-    g: 'http://www.google.com/',
-    f: 'http://www.facebook.com/',
-    t: 'http://www.twitter.com/',
-};
+var mappings = require('./mappings')
 
 var server = http.createServer(function(req, res) {
     var alias = req.url.substring(1); // stripping the prefixed slash from the url
