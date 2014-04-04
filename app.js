@@ -2,14 +2,21 @@
 
 var http = require('http');
 
-var server = http.createServer(function(req, res) {
-    var verb = req.method,
-        url = req.url
+var mappings = {
+    g: 'http://www.google.com'
+};
 
-    res.writeHead(200, {
-        'content-type': 'text/html'
+var server = http.createServer(function(req, res) {
+    var alias = req.url.substring(1); // stripping the prefixed slash from the url
+
+    if (! mappings[alias]) {
+        res.writeHead(404);
+        return res.end();
+    }
+
+    res.writeHead(302, {
+        'location': mappings[alias]
     })
-	res.write('Hello world! ' + verb + ' ' + url);
 	res.end();
 });
 
