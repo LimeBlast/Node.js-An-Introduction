@@ -3,7 +3,9 @@
 var http = require('http');
 
 var mappings = {
-    g: 'http://www.google.com'
+    g: 'http://www.google.com/',
+    f: 'http://www.facebook.com/',
+    t: 'http://www.twitter.com/',
 };
 
 var server = http.createServer(function(req, res) {
