@@ -8,6 +8,11 @@ var mappings = require('./data/mappings')
 
 var app = connect();
 
+app.use(function(req, res, next) {
+	console.log(req.method + ' ' + req.url);
+	next();
+})
+
 app.use(function(req, res) {
 	mappings.get(req.url, function(err, mapping) {
 
