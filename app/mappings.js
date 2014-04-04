@@ -1,11 +1,11 @@
 'use strict';
 
 var data = {
-    d: 'http://www.danielhollands.co.uk/',
-    l: 'http://www.limeblast.co.uk/',
-    g: 'http://www.google.com/',
-    f: 'http://www.facebook.com/',
-    t: 'http://www.twitter.com/'
+	d: 'http://www.danielhollands.co.uk/',
+	l: 'http://www.limeblast.co.uk/',
+	g: 'http://www.google.com/',
+	f: 'http://www.facebook.com/',
+	t: 'http://www.twitter.com/'
 };
 
 var mappings = {

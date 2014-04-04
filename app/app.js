@@ -5,16 +5,16 @@ var http = require('http');
 var mappings = require('./mappings')
 
 var server = http.createServer(function(req, res) {
-    mappings.get(req.url, function(err, mapping) {
+	mappings.get(req.url, function(err, mapping) {
 
-	    if (err) {
-	        res.writeHead(404);
-	        return res.end();
-	    }
+		if (err) {
+			res.writeHead(404);
+			return res.end();
+		}
 
-	    res.writeHead(302, {'location': mapping})
+		res.writeHead(302, {'location': mapping})
 		res.end();
-    });
+	});
 });
 
 server.listen(3000);
