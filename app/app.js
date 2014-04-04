@@ -2,16 +2,14 @@
 
 var http = require('http');
 
-var connect = require('connect')
+var connect = require('connect');
 
-var mappings = require('./data/mappings')
+var logger = require('./logger'),
+	mappings = require('./data/mappings');
 
 var app = connect();
 
-app.use(function(req, res, next) {
-	console.log(req.method + ' ' + req.url);
-	next();
-})
+app.use(logger);
 
 app.use(function(req, res) {
 	mappings.get(req.url, function(err, mapping) {
