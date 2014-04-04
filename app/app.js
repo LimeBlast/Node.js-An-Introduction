@@ -2,9 +2,13 @@
 
 var http = require('http');
 
+var connect = require('connect')
+
 var mappings = require('./data/mappings')
 
-var server = http.createServer(function(req, res) {
+var app = connect();
+
+app.use(function(req, res) {
 	mappings.get(req.url, function(err, mapping) {
 
 		if (err) {
@@ -17,4 +21,4 @@ var server = http.createServer(function(req, res) {
 	});
 });
 
-server.listen(3000);
+http.createServer(app).listen(3000);
