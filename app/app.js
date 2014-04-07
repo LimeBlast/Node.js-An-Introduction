@@ -1,6 +1,7 @@
 'use strict';
 
-var http = require('http');
+var http = require('http'),
+	path = require('path');
 
 var express = require('express');
 
@@ -9,12 +10,14 @@ var logger = require('./logger'),
 
 var app = express();
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.use(logger('redirector'));
 
 app.get('/', function(req, res) {
-	res.send({
-		foo: 'bar',
-		baz: 23
+	res.render('index', {
+		mappings: 'Hello world from EJS!'
 	});
 });
 
