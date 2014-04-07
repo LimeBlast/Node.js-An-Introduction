@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 
 app.use(logger('redirector'));
 
+mappings.create('t', 'http://twitter.com/');
+
 app.get('/', function(req, res) {
 	res.render('index', {
 		mappings: 'Hello world from EJS!'
