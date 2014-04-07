@@ -20,14 +20,8 @@ app.get('/', function(req, res) {
 
 app.get('/:alias', function(req, res) {
 	mappings.get(req.params.alias, function(err, mapping) {
-
-		if (err) {
-			res.writeHead(404);
-			return res.end();
-		}
-
-		res.writeHead(302, {'location': mapping})
-		res.end();
+		if (err) { res.send(404); }
+		res.redirect(mapping);
 	});
 });
 
