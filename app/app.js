@@ -11,6 +11,10 @@ var app = express();
 
 app.use(logger('redirector'));
 
+app.get('/', function(req, res) {
+	res.send('Hello redirector');
+});
+
 app.get('/:alias', function(req, res) {
 	mappings.get(req.params.alias, function(err, mapping) {
 
