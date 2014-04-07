@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
 
 app.get('/:alias', function(req, res) {
 	mappings.get(req.params.alias, function(err, mapping) {
-		if (err) { res.send(404); }
+		if (err) { return res.send(404); }
 		res.redirect(mapping);
 	});
 });
