@@ -12,7 +12,7 @@ var app = express();
 app.use(logger('redirector'));
 
 app.get('/', function(req, res) {
-	res.send('Hello redirector');
+	res.send(404);
 });
 
 app.get('/:alias', function(req, res) {
