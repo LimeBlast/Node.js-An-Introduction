@@ -12,7 +12,10 @@ var app = express();
 app.use(logger('redirector'));
 
 app.get('/', function(req, res) {
-	res.send(404);
+	res.send({
+		foo: 'bar',
+		baz: 23
+	});
 });
 
 app.get('/:alias', function(req, res) {
