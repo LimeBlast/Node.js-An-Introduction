@@ -2,12 +2,12 @@
 
 var http = require('http');
 
-var connect = require('connect');
+var express = require('express');
 
 var logger = require('./logger'),
 	mappings = require('./data/mappings');
 
-var app = connect();
+var app = express();
 
 app.use(logger('redirector'));
 app.use(logger('redirector'));
